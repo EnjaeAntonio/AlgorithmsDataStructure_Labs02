@@ -2,7 +2,7 @@
 //A program that produces an array of all of the characters that appear more than once in a string.
 //For example, the string “Programmatic Python” would result in the array ['p','r','o','a','m','t'].
 
-//A program that reverses a provided string 
+
 //A program that finds the longest unbroken word in a string and prints it
 //For example, the string "Tiptoe through the tulips" would print "through"
 
@@ -14,7 +14,7 @@ for (int i = 0; i < input.Length; i++)
     {
         if (input[i] == input[j] && !result.Contains(input[i]))
         {
-            result[j] = input[i];
+            result[j] = input[i];   
         }
     }
 }
@@ -37,3 +37,11 @@ for(int i = 0; i < uniqueSentSplit.Length; i++)
         }
     }
 }
+
+//A program that reverses a provided string 
+
+Console.WriteLine("Please enter a word to check if it is a palindrome");
+string userPalin = Console.ReadLine();
+char[] charArray = userPalin.ToCharArray();
+string joinedWords = String.Join("", charArray).ToLower();
+Array.Reverse(charArray);
