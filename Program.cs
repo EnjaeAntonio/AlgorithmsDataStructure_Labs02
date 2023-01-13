@@ -15,10 +15,8 @@ for (int i = 0; i < input.Length; i++)
 {
     for (int j = i + 1; j < input.Length; j++)
     {
-        Console.WriteLine(input[j]);
         if (input[i] == input[j] && !result.Contains(input[i]))
         {
-
             result[index] = input[i];
             index++;
         }
