@@ -6,19 +6,17 @@
 //A program that reverses a provided string 
 //A program that finds the longest unbroken word in a string and prints it
 //For example, the string "Tiptoe through the tulips" would print "through"
-//If there are multiple words tied for greatest length, print the last one
 
 string input = "Programmatic Python";
 char[] result = new char[input.Length];
-int index = 0;
 for (int i = 0; i < input.Length; i++)
 {
     for (int j = i + 1; j < input.Length; j++)
     {
         if (input[i] == input[j] && !result.Contains(input[i]))
         {
-            result[index] = input[i];
-            index++;
+            result[j] = input[i];
         }
     }
 }
+Console.WriteLine(result);
