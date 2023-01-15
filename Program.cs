@@ -65,7 +65,13 @@ for (int j = 0; j < 1; j++)
 
 string sentence = "Tiptoe through the tulips";
 string[] sentSplit = sentence.Split(' ');
-for(int i = 0; i < sentSplit.Length; i++)
+string longestWord = "";
+foreach(string word in sentSplit)
 {
-    Console.WriteLine(sentSplit[i]);
+    if(word.Length > longestWord.Length)
+    {
+        longestWord = word;
+    }
 }
+Console.WriteLine();    
+Console.WriteLine($"The longest word is {longestWord}");
