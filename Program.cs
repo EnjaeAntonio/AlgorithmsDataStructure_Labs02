@@ -21,17 +21,19 @@ Console.WriteLine(result);
 
 string uniqueSentence = "To be or not to be";
 string[] uniqueSentSplit = uniqueSentence.Split(' ');
+List<string> uniqueWords = new List<string>();
 
-for(int i = 0; i < uniqueSentSplit.Length; i++)
+for (int i = 0; i < uniqueSentSplit.Length; i++)
 {
-    for(int j = 0; j < uniqueSentSplit.Length; j++)
+    if (!uniqueWords.Contains(uniqueSentSplit[i]))
     {
-        if (uniqueSentSplit[i] == uniqueSentSplit[j])
-        {
-            uniqueSentence = uniqueSentSplit[j];
-            Console.WriteLine(uniqueSentSplit[j]);
-        }
+        uniqueWords.Add(uniqueSentSplit[i]);
     }
+}
+
+foreach(string s in uniqueWords)
+{
+    Console.WriteLine(s);
 }
  
 //A program that reverses a provided string 
@@ -52,18 +54,18 @@ for (int j = 0; j < 1; j++)
 
     if (joinedWords == reversedWord)
     {
-        Console.WriteLine($"Your word reversed is {reversedWord} and is also a palindrome");
+        Console.WriteLine($"Your word reversed is '{reversedWord}' and is also a palindrome");
     }
     else
     {
-        Console.WriteLine($"Your word reversed is {reversedWord} and is not a palindrome");
+        Console.WriteLine($"Your word reversed is '{reversedWord}' and is not a palindrome");
     }
 }
 
 //A program that finds the longest unbroken word in a string and prints it
 //For example, the string "Tiptoe through the tulips" would print "through"
 
-string sentence = "Tiptoe through the tulips";
+string sentence = "Tiptoe through subways the tulips";
 string[] sentSplit = sentence.Split(' ');
 string longestWord = "";
 foreach(string word in sentSplit)
@@ -74,4 +76,4 @@ foreach(string word in sentSplit)
     }
 }
 Console.WriteLine();    
-Console.WriteLine($"The longest word is {longestWord}");
+Console.WriteLine($"The longest word is '{longestWord}'");
